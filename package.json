@@ -1,0 +1,48 @@
+{
+  "name": "opstack-debugger",
+  "displayName": "OP Stack Debugger",
+  "description": "A VS Code extension for debugging Solidity contracts on Optimism's Superchain",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:solidity"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "opstack-debugger.scanSolidity",
+        "title": "OP Stack Debugger: Scan Solidity Code"
+      },
+      {
+        "command": "opstack-debugger.runTests",
+        "title": "OP Stack Debugger: Run Hardhat Tests on Base Sepolia"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.9",
+    "@types/node": "^18.19.112",
+    "@types/vscode": "^1.101.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@solidity-parser/parser": "^0.16.2",
+    "dotenv": "^17.0.0",
+    "ethers": "^6.14.0",
+    "punycode": "^2.3.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
